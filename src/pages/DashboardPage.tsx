@@ -66,9 +66,9 @@ const DashboardPage: React.FC = () => {
       <DashboardNavigation />
       
       <main className="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto page-transition">
           {/* Welcome Section */}
-          <div className="mb-8">
+          <div className="mb-8 animate-fadeInUp">
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-[#F1F5F9] mb-2">
               Welcome back, {user?.name?.split(' ')[0]}!
             </h1>
@@ -78,8 +78,8 @@ const DashboardPage: React.FC = () => {
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <div className="bg-white dark:bg-[#111827] p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-[#1E293B]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 animate-fadeInUp" style={{animationDelay: '0.2s'}}>
+            <div className="bg-white dark:bg-[#111827] p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-[#1E293B] hover:shadow-lg transition-all duration-300 card-tilt">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-600 dark:text-[#94A3B8]">Total Properties</p>
@@ -91,7 +91,7 @@ const DashboardPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-white dark:bg-[#111827] p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-[#1E293B]">
+            <div className="bg-white dark:bg-[#111827] p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-[#1E293B] hover:shadow-lg transition-all duration-300 card-tilt">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-600 dark:text-[#94A3B8]">Verified</p>
@@ -103,7 +103,7 @@ const DashboardPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-white dark:bg-[#111827] p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-[#1E293B]">
+            <div className="bg-white dark:bg-[#111827] p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-[#1E293B] hover:shadow-lg transition-all duration-300 card-tilt">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-600 dark:text-[#94A3B8]">Total Value</p>
@@ -115,7 +115,7 @@ const DashboardPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-white dark:bg-[#111827] p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-[#1E293B]">
+            <div className="bg-white dark:bg-[#111827] p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-[#1E293B] hover:shadow-lg transition-all duration-300 card-tilt">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-600 dark:text-[#94A3B8]">Pending</p>
@@ -131,14 +131,14 @@ const DashboardPage: React.FC = () => {
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Recent Properties */}
             <div className="lg:col-span-2">
-              <div className="bg-white dark:bg-[#111827] rounded-2xl shadow-sm border border-gray-200 dark:border-[#1E293B] p-6">
+              <div className="bg-white dark:bg-[#111827] rounded-2xl shadow-sm border border-gray-200 dark:border-[#1E293B] p-6 animate-fadeInUp" style={{animationDelay: '0.4s'}}>
                 <div className="flex items-center justify-between mb-6">
                   <h2 className="text-xl font-semibold text-gray-900 dark:text-[#F1F5F9]">
                     Your Properties
                   </h2>
                   <Link
                     to="/registry"
-                    className="inline-flex items-center px-4 py-2 rounded-lg bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white font-medium hover:opacity-90 transition-opacity duration-200"
+                    className="inline-flex items-center px-4 py-2 rounded-lg bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white font-medium btn-premium shadow-lg"
                   >
                     <Plus size={16} className="mr-2" />
                     Add Property
@@ -147,7 +147,7 @@ const DashboardPage: React.FC = () => {
 
                 <div className="space-y-4">
                   {recentProperties.map((property) => (
-                    <div key={property.id} className="flex items-center space-x-4 p-4 rounded-xl bg-gray-50 dark:bg-[#0B0B0F] border border-gray-200 dark:border-[#1E293B]">
+                    <div key={property.id} className="flex items-center space-x-4 p-4 rounded-xl bg-gray-50 dark:bg-[#0B0B0F] border border-gray-200 dark:border-[#1E293B] hover:shadow-md transition-all duration-300 hover:scale-[1.02]">
                       <img
                         src={property.image}
                         alt={property.title}
@@ -169,7 +169,7 @@ const DashboardPage: React.FC = () => {
                         <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(property.status)}`}>
                           {property.status}
                         </span>
-                        <button className="text-[#9945FF] hover:text-[#14F195] text-sm font-medium">
+                        <button className="text-[#9945FF] hover:text-[#14F195] text-sm font-medium transition-colors duration-200 hover:scale-105">
                           View Details
                         </button>
                       </div>
@@ -180,7 +180,7 @@ const DashboardPage: React.FC = () => {
                 <div className="mt-6 text-center">
                   <Link
                     to="/registry"
-                    className="inline-flex items-center text-[#9945FF] hover:text-[#14F195] font-medium transition-colors duration-200"
+                    className="inline-flex items-center text-[#9945FF] hover:text-[#14F195] font-medium transition-all duration-200 hover:scale-105"
                   >
                     View All Properties
                     <ArrowRight size={16} className="ml-1" />
@@ -192,14 +192,14 @@ const DashboardPage: React.FC = () => {
             {/* Quick Actions */}
             <div className="space-y-6">
               {/* Quick Actions Card */}
-              <div className="bg-white dark:bg-[#111827] rounded-2xl shadow-sm border border-gray-200 dark:border-[#1E293B] p-6">
+              <div className="bg-white dark:bg-[#111827] rounded-2xl shadow-sm border border-gray-200 dark:border-[#1E293B] p-6 animate-fadeInUp" style={{animationDelay: '0.6s'}}>
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-[#F1F5F9] mb-4">
                   Quick Actions
                 </h2>
                 <div className="space-y-3">
                   <Link
                     to="/registry"
-                    className="flex items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#0B0B0F] transition-colors duration-200 group"
+                    className="flex items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#0B0B0F] transition-all duration-200 group hover:scale-105"
                   >
                     <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center mr-3">
                       <FileText className="w-5 h-5 text-blue-600 dark:text-blue-400" />
@@ -213,7 +213,7 @@ const DashboardPage: React.FC = () => {
 
                   <Link
                     to="/valuation"
-                    className="flex items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#0B0B0F] transition-colors duration-200 group"
+                    className="flex items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#0B0B0F] transition-all duration-200 group hover:scale-105"
                   >
                     <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex items-center justify-center mr-3">
                       <DollarSign className="w-5 h-5 text-purple-600 dark:text-purple-400" />
@@ -227,7 +227,7 @@ const DashboardPage: React.FC = () => {
 
                   <Link
                     to="/verify"
-                    className="flex items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#0B0B0F] transition-colors duration-200 group"
+                    className="flex items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#0B0B0F] transition-all duration-200 group hover:scale-105"
                   >
                     <div className="w-10 h-10 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center mr-3">
                       <Shield className="w-5 h-5 text-green-600 dark:text-green-400" />
@@ -242,11 +242,11 @@ const DashboardPage: React.FC = () => {
               </div>
 
               {/* Map Preview */}
-              <div className="bg-white dark:bg-[#111827] rounded-2xl shadow-sm border border-gray-200 dark:border-[#1E293B] p-6">
+              <div className="bg-white dark:bg-[#111827] rounded-2xl shadow-sm border border-gray-200 dark:border-[#1E293B] p-6 animate-fadeInUp" style={{animationDelay: '0.8s'}}>
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-[#F1F5F9] mb-4">
                   Property Locations
                 </h2>
-                <div className="aspect-square bg-gray-100 dark:bg-[#0B0B0F] rounded-lg flex items-center justify-center">
+                <div className="aspect-square bg-gray-100 dark:bg-[#0B0B0F] rounded-lg flex items-center justify-center hover:bg-gray-200 dark:hover:bg-[#1E293B] transition-colors duration-300">
                   <div className="text-center">
                     <MapPin className="w-12 h-12 text-gray-400 dark:text-[#64748B] mx-auto mb-2" />
                     <p className="text-sm text-gray-500 dark:text-[#64748B]">Interactive map</p>

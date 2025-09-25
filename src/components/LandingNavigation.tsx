@@ -34,7 +34,7 @@ const LandingNavigation: React.FC = () => {
               <Link
                 key={path}
                 to={path}
-                className="text-gray-600 dark:text-[#94A3B8] hover:text-gray-900 dark:hover:text-[#F1F5F9] font-medium transition-colors duration-200"
+                className="text-gray-600 dark:text-[#94A3B8] hover:text-gray-900 dark:hover:text-[#F1F5F9] font-medium transition-colors duration-200 nav-link"
               >
                 {label}
               </Link>
@@ -46,7 +46,7 @@ const LandingNavigation: React.FC = () => {
             <ThemeToggle />
             <Link
               to="/auth"
-              className="px-6 py-2 rounded-full bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white font-medium hover:opacity-90 transition-opacity duration-200"
+              className="px-6 py-2 rounded-full bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white font-medium btn-premium shadow-lg"
             >
               Get Started
             </Link>
@@ -66,14 +66,14 @@ const LandingNavigation: React.FC = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200 dark:border-[#1E293B]">
+          <div className="md:hidden py-4 border-t border-gray-200 dark:border-[#1E293B] animate-fadeIn">
             <div className="flex flex-col space-y-4">
               {navItems.map(({ path, label }) => (
                 <Link
                   key={path}
                   to={path}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-gray-600 dark:text-[#94A3B8] hover:text-gray-900 dark:hover:text-[#F1F5F9] font-medium transition-colors duration-200 px-2"
+                  className="text-gray-600 dark:text-[#94A3B8] hover:text-gray-900 dark:hover:text-[#F1F5F9] font-medium transition-colors duration-200 px-2 nav-link"
                 >
                   {label}
                 </Link>
@@ -81,7 +81,7 @@ const LandingNavigation: React.FC = () => {
               <Link
                 to="/auth"
                 onClick={() => setIsMenuOpen(false)}
-                className="px-6 py-2 rounded-full bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white font-medium hover:opacity-90 transition-opacity duration-200 text-center mx-2"
+                className="px-6 py-2 rounded-full bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white font-medium btn-premium text-center mx-2 shadow-lg"
               >
                 Get Started
               </Link>

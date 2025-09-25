@@ -65,8 +65,8 @@ const DashboardNavigation: React.FC = () => {
                   to={path}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-colors ${
                     location.pathname === path
-                      ? 'bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white'
-                      : 'text-gray-600 dark:text-[#94A3B8] hover:text-gray-900 dark:hover:text-[#F1F5F9]'
+                      ? 'bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white shadow-lg'
+                      : 'text-gray-600 dark:text-[#94A3B8] hover:text-gray-900 dark:hover:text-[#F1F5F9] hover:bg-gray-100 dark:hover:bg-[#1E293B]'
                   }`}
                 >
                   <Icon size={18} />
@@ -107,10 +107,10 @@ const DashboardNavigation: React.FC = () => {
       {isSidebarOpen && (
         <>
           <div 
-            className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+            className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden animate-fadeIn"
             onClick={() => setIsSidebarOpen(false)}
           />
-          <div className="fixed top-16 left-0 bottom-0 w-64 bg-white dark:bg-[#0B0B0F] border-r border-gray-200 dark:border-[#1E293B] z-50 lg:hidden">
+          <div className="fixed top-16 left-0 bottom-0 w-64 bg-white dark:bg-[#0B0B0F] border-r border-gray-200 dark:border-[#1E293B] z-50 lg:hidden animate-slideInLeft">
             <div className="p-4 space-y-2">
               {navItems.map(({ path, label, icon: Icon }) => (
                 <Link
@@ -119,8 +119,8 @@ const DashboardNavigation: React.FC = () => {
                   onClick={() => setIsSidebarOpen(false)}
                   className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
                     location.pathname === path
-                      ? 'bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white'
-                      : 'text-gray-600 dark:text-[#94A3B8] hover:text-gray-900 dark:hover:text-[#F1F5F9] hover:bg-gray-100 dark:hover:bg-[#1E293B]'
+                      ? 'bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white shadow-lg'
+                      : 'text-gray-600 dark:text-[#94A3B8] hover:text-gray-900 dark:hover:text-[#F1F5F9] hover:bg-gray-100 dark:hover:bg-[#1E293B] hover:scale-105'
                   }`}
                 >
                   <Icon size={20} />
@@ -130,7 +130,7 @@ const DashboardNavigation: React.FC = () => {
               
               <button
                 onClick={handleLogout}
-                className="flex items-center space-x-3 px-4 py-3 rounded-lg text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors w-full"
+                className="flex items-center space-x-3 px-4 py-3 rounded-lg text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all duration-300 w-full hover:scale-105"
               >
                 <LogOut size={20} />
                 <span className="font-medium">Logout</span>

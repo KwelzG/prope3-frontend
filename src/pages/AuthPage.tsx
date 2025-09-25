@@ -90,9 +90,9 @@ const AuthPage: React.FC = () => {
         </div>
 
         {/* Auth Form */}
-        <div className="bg-white dark:bg-[#111827] py-8 px-6 shadow-xl rounded-2xl border border-gray-200 dark:border-[#1E293B]">
+        <div className="bg-white dark:bg-[#111827] py-8 px-6 shadow-xl rounded-2xl border border-gray-200 dark:border-[#1E293B] animate-fadeInUp" style={{animationDelay: '0.2s'}}>
           {error && (
-            <div className="mb-4 p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 text-sm">
+            <div className="mb-4 p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 text-sm animate-fadeIn">
               {error}
             </div>
           )}
@@ -185,7 +185,7 @@ const AuthPage: React.FC = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white font-semibold hover:opacity-90 focus:ring-2 focus:ring-[#9945FF] focus:ring-offset-2 transition-opacity duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white font-semibold btn-premium shadow-lg focus:ring-2 focus:ring-[#9945FF] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? 'Please wait...' : (isLogin ? 'Sign In' : 'Create Account')}
             </button>
@@ -207,7 +207,7 @@ const AuthPage: React.FC = () => {
           <button
             onClick={handleGoogleAuth}
             disabled={isLoading}
-            className="mt-4 w-full py-3 px-4 rounded-lg border border-gray-300 dark:border-[#1E293B] bg-white dark:bg-[#0B0B0F] text-gray-700 dark:text-[#F1F5F9] font-medium hover:bg-gray-50 dark:hover:bg-[#1E293B] focus:ring-2 focus:ring-[#9945FF] focus:ring-offset-2 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+            className="mt-4 w-full py-3 px-4 rounded-lg border border-gray-300 dark:border-[#1E293B] bg-white dark:bg-[#0B0B0F] text-gray-700 dark:text-[#F1F5F9] font-medium hover:bg-gray-50 dark:hover:bg-[#1E293B] focus:ring-2 focus:ring-[#9945FF] focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 hover:scale-105"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -222,7 +222,7 @@ const AuthPage: React.FC = () => {
           <div className="mt-6 text-center">
             <button
               onClick={() => setIsLogin(!isLogin)}
-              className="text-[#9945FF] hover:text-[#14F195] font-medium transition-colors duration-200"
+              className="text-[#9945FF] hover:text-[#14F195] font-medium transition-all duration-200 hover:scale-105"
             >
               {isLogin ? "Don't have an account? Sign up" : "Already have an account? Sign in"}
             </button>

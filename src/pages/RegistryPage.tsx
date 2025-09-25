@@ -371,14 +371,14 @@ const RegistryPage: React.FC = () => {
                   <button
                     onClick={handleSubmit}
                     disabled={isUploading}
-                    className="px-6 py-2 rounded-lg bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white font-medium hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity duration-200"
+                    className="px-6 py-2 rounded-lg bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white font-medium btn-premium shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isUploading ? 'Registering...' : 'Complete Registration'}
                   </button>
                 ) : currentStep < 4 ? (
                   <button
                     onClick={handleNextStep}
-                    className="px-6 py-2 rounded-lg bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white font-medium hover:opacity-90 transition-opacity duration-200"
+                    className="px-6 py-2 rounded-lg bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white font-medium btn-premium shadow-lg"
                   >
                     Next
                   </button>

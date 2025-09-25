@@ -99,7 +99,7 @@ const ValuationPage: React.FC = () => {
                   <button
                     onClick={handleValuation}
                     disabled={!selectedProperty || isCalculating}
-                    className="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white font-semibold hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity duration-200 flex items-center justify-center"
+                    className="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-[#9945FF] to-[#14F195] text-white font-semibold btn-premium shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                   >
                     {isCalculating ? (
                       <>
@@ -239,7 +239,7 @@ const ValuationPage: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                <div className="bg-white dark:bg-[#111827] rounded-2xl shadow-sm border border-gray-200 dark:border-[#1E293B] p-12 text-center">
+                <div className="bg-white dark:bg-[#111827] rounded-2xl shadow-sm border border-gray-200 dark:border-[#1E293B] p-12 text-center animate-fadeInUp">
                   <DollarSign className="w-16 h-16 text-gray-400 dark:text-[#64748B] mx-auto mb-4" />
                   <h3 className="text-lg font-medium text-gray-900 dark:text-[#F1F5F9] mb-2">
                     Ready for AI Valuation
