@@ -6,6 +6,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import LandingPage from './pages/LandingPage';
 import AuthPage from './pages/AuthPage';
 import DashboardPage from './pages/DashboardPage';
+import { PropertiesPage } from './pages/PropertiesPage';
 import RegistryPage from './pages/RegistryPage';
 import ValuationPage from './pages/ValuationPage';
 import VerificationPage from './pages/VerificationPage';
@@ -48,6 +49,7 @@ function App() {
                 <ProtectedRoute>
                   <VerificationPage />
                 </ProtectedRoute>
+            <Route path="/properties" element={<ProtectedRoute><PropertiesPage /></ProtectedRoute>} />
               } />
               <Route path="/profile" element={
                 <ProtectedRoute>
