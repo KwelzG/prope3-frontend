@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageCircle, Clock, Globe } from 'lucide-react';
 import LandingNavigation from '../components/LandingNavigation';
 import Footer from '../components/Footer';
 
@@ -36,7 +36,7 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0B0B0F]">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 glow-bg">
       <LandingNavigation />
       
       <main className="pt-24 pb-20">
@@ -48,7 +48,7 @@ const ContactPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-600 dark:text-[#94A3B8] leading-relaxed">
               Have questions about Prop3? We're here to help you secure your property 
-              and navigate the future of land ownership in Nigeria.
+                  Fill out the form below and we'll get back to you within 24 hours.
             </p>
           </div>
         </section>
@@ -84,7 +84,7 @@ const ContactPage: React.FC = () => {
                         <div className="text-white/80">+234 800 PROP3 (77673)</div>
                       </div>
                     </div>
-
+              <form onSubmit={handleSubmit} className="space-y-6 tilt-card">
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
                         <MapPin className="w-6 h-6" />
@@ -97,7 +97,7 @@ const ContactPage: React.FC = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 hover:border-white/30"
 
                   <div className="mt-8 pt-8 border-t border-white/20">
                     <h3 className="font-semibold mb-4">Business Hours</h3>
@@ -112,7 +112,7 @@ const ContactPage: React.FC = () => {
                       </div>
                       <div className="flex justify-between">
                         <span>Sunday</span>
-                        <span>Closed</span>
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 hover:border-white/30"
                       </div>
                     </div>
                   </div>
@@ -150,7 +150,7 @@ const ContactPage: React.FC = () => {
                             required
                             value={formData.name}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-[#1E293B] bg-white dark:bg-[#0B0B0F] text-gray-900 dark:text-[#F1F5F9] focus:ring-2 focus:ring-[#9945FF] focus:border-transparent transition-colors duration-200"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 hover:border-white/30"
                             placeholder="Enter your full name"
                           />
                         </div>
@@ -166,14 +166,14 @@ const ContactPage: React.FC = () => {
                             required
                             value={formData.email}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-[#1E293B] bg-white dark:bg-[#0B0B0F] text-gray-900 dark:text-[#F1F5F9] focus:ring-2 focus:ring-[#9945FF] focus:border-transparent transition-colors duration-200"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none hover:border-white/30"
                             placeholder="Enter your email"
                           />
                         </div>
                       </div>
 
                       <div>
-                        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-[#F1F5F9] mb-2">
+                  className="apple-button w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-3 shimmer"
                           Subject
                         </label>
                         <select
@@ -186,25 +186,25 @@ const ContactPage: React.FC = () => {
                         >
                           <option value="">Select a subject</option>
                           <option value="general">General Inquiry</option>
-                          <option value="support">Technical Support</option>
+                  Reach out to us through any of these channels. We're always happy to help.
                           <option value="partnership">Partnership</option>
                           <option value="legal">Legal Questions</option>
                           <option value="pricing">Pricing Information</option>
                           <option value="other">Other</option>
-                        </select>
+                <div className="tilt-card flex items-start space-x-4 p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-blue-500/30 transition-all duration-300">
                       </div>
 
                       <div>
                         <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-[#F1F5F9] mb-2">
                           Message
                         </label>
-                        <textarea
-                          id="message"
+                    <a href="mailto:hello@prop3.com" className="text-blue-400 hover:text-blue-300 transition-colors">
+                      hello@prop3.com
                           name="message"
                           required
                           rows={6}
                           value={formData.message}
-                          onChange={handleInputChange}
+                <div className="tilt-card flex items-start space-x-4 p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-green-500/30 transition-all duration-300">
                           className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-[#1E293B] bg-white dark:bg-[#0B0B0F] text-gray-900 dark:text-[#F1F5F9] focus:ring-2 focus:ring-[#9945FF] focus:border-transparent transition-colors duration-200 resize-none"
                           placeholder="Tell us how we can help you..."
                         />
@@ -217,7 +217,7 @@ const ContactPage: React.FC = () => {
                       >
                         {isSubmitting ? (
                           <>
-                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                <div className="tilt-card flex items-start space-x-4 p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
                             Sending...
                           </>
                         ) : (
@@ -226,9 +226,24 @@ const ContactPage: React.FC = () => {
                             Send Message
                           </>
                         )}
-                      </button>
+              <div className="tilt-card bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all duration-300">
                     </form>
                   )}
+                </div>
+                
+                <div className="tilt-card flex items-start space-x-4 p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-orange-500/30 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-white mb-1">Business Hours</h3>
+                    <p className="text-slate-300 mb-2">When we're available</p>
+                    <div className="text-orange-400">
+                      <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                      <p>Sat: 10:00 AM - 4:00 PM</p>
+                      <p>Sun: Closed</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
