@@ -7,9 +7,7 @@ import {
   Smartphone, 
   Clock,
   CheckCircle,
-  Zap,
-  Building,
-  Lock
+  Zap
 } from 'lucide-react';
 import LandingNavigation from '../components/LandingNavigation';
 import Footer from '../components/Footer';
@@ -17,9 +15,9 @@ import Footer from '../components/Footer';
 const FeaturesPage: React.FC = () => {
   const features = [
     {
-      icon: Building,
-      title: 'Asset Registry',
-      description: 'Register properties, land, vehicles, and valuable assets with immutable blockchain certificates',
+      icon: Shield,
+      title: 'Blockchain Security',
+      description: 'Immutable property records secured by advanced blockchain technology',
       benefits: [
         'Tamper-proof ownership records',
         'Cryptographic security',
